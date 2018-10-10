@@ -1,5 +1,6 @@
 package br.com.cenarioesolucao.cursoModelagemConceitual.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,9 @@ public class CategoriaService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não é possivel excluir uma categoria que já possui produtos cadastrados!");
 		}
+	}
+	
+	public List<Categoria> buscarAll() {
+		return repo.findAll();
 	}
 }
