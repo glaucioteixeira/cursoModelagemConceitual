@@ -69,6 +69,14 @@ public class CursoModelagemConceitualApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Categoria cat1 = new Categoria(null, "INFORMÁTICA");
 		Categoria cat2 = new Categoria(null, "ESCRITÓRIO");
+		Categoria cat3 = new Categoria(null, "CAMA MESA BANHO");
+		Categoria cat4 = new Categoria(null, "ELETRÔNICOS");
+		Categoria cat5 = new Categoria(null, "JARDINAGEM");
+		Categoria cat6 = new Categoria(null, "DECORAÇÃO");
+		Categoria cat7 = new Categoria(null, "PERFUMARIA");
+		Categoria cat8 = new Categoria(null, "BRICOLAGEM");
+		Categoria cat9 = new Categoria(null, "ALIMENTOS");
+		
 		
 		Produto p1 = new Produto(null, "COMPUTADOR", 2000.00);
 		Produto p2 = new Produto(null, "IMPRESSORA", 800.00);
@@ -81,7 +89,7 @@ public class CursoModelagemConceitualApplication implements CommandLineRunner {
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 		
 		Estado est1 = new Estado(null, "MINAS GERAIS");
