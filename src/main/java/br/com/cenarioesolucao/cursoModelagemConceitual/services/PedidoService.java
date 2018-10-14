@@ -14,7 +14,6 @@ import br.com.cenarioesolucao.cursoModelagemConceitual.domain.enums.EstadoPagame
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ItemPedidoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PagamentoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PedidoRepository;
-import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ProdutoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.services.exceptions.ObjectNotFoundException;
 
 @Service
