@@ -6,7 +6,7 @@
 	<groupId>br.com.cenarioesolucao.cursoModelagemConceitual</groupId>
 	<artifactId>cursoModelagemConceitual</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>cursoModelagemConceitual</name>
 	<description>Estudo de caso</description>
