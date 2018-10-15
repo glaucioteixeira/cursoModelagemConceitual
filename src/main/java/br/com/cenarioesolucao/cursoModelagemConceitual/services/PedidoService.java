@@ -11,6 +11,7 @@ import br.com.cenarioesolucao.cursoModelagemConceitual.domain.ItemPedido;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.PagamentoComBoleto;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.Pedido;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.enums.EstadoPagamento;
+import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ClienteRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ItemPedidoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PagamentoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PedidoRepository;
@@ -33,6 +34,12 @@ public class PedidoService {
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
 	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private ClienteService clienteService;
+	
 	public Pedido buscar(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
 		//return obj.orElse(null);
@@ -44,6 +51,7 @@ public class PedidoService {
 	public Pedido Insert(Pedido obj) {
 		obj.setId(null);
 		obj.setInstante(new Date());
+		obj.setCliente(clienteService.buscar(obj.getCliente().getId()));
 		obj.getPagamento().setEstado(EstadoPagamento.PENDENTE);
 		obj.getPagamento().setPedido(obj);
 		
@@ -57,11 +65,14 @@ public class PedidoService {
 		
 		for (ItemPedido ip : obj.getItens()) {
 			ip.setDesconto(0.0);
-			ip.setPreco(produtoService.buscar(ip.getProduto().getId()).getPreco());
+			ip.setProduto(produtoService.buscar(ip.getProduto().getId()));
+			ip.setPreco(ip.getProduto().getPreco());
 			ip.setPedido(obj);
 		}
 		
 		itemPedidoRepository.saveAll(obj.getItens());
+		
+		System.out.println(obj);
 		
 		return obj;
 		
