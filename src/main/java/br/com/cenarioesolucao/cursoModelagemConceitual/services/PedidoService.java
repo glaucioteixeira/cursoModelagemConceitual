@@ -11,7 +11,6 @@ import br.com.cenarioesolucao.cursoModelagemConceitual.domain.ItemPedido;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.PagamentoComBoleto;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.Pedido;
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.enums.EstadoPagamento;
-import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ClienteRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ItemPedidoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PagamentoRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.PedidoRepository;
@@ -33,9 +32,6 @@ public class PedidoService {
 	
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
-	
-	@Autowired
-	private ClienteRepository clienteRepository;
 	
 	@Autowired
 	private ClienteService clienteService;

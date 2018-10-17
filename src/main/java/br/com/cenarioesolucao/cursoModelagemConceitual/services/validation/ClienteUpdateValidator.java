@@ -12,11 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerMapping;
 
 import br.com.cenarioesolucao.cursoModelagemConceitual.domain.Cliente;
-import br.com.cenarioesolucao.cursoModelagemConceitual.domain.enums.TipoCliente;
 import br.com.cenarioesolucao.cursoModelagemConceitual.dto.ClienteDTO;
 import br.com.cenarioesolucao.cursoModelagemConceitual.repositories.ClienteRepository;
 import br.com.cenarioesolucao.cursoModelagemConceitual.resources.exception.FieldMessage;
-import br.com.cenarioesolucao.cursoModelagemConceitual.services.validation.utils.BR;
 
 public class ClienteUpdateValidator implements ConstraintValidator<ClienteUpdate, ClienteDTO> {
 	
